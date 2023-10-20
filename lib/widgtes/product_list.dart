@@ -85,6 +85,7 @@ class _ProductListState extends State<ProductList> {
                 SizedBox(
                   height: 120,
                   child: ListView.builder(
+                    key: const Key('Cat list'),
                     itemCount: filters.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context,index){
@@ -125,7 +126,7 @@ class _ProductListState extends State<ProductList> {
                       builder: (context,constraints){
                        
                        if(constraints.maxWidth>1080){
-                        return         GridView.builder(
+                        return         GridView.builder(                           
                               itemCount: products.length,
                              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                childAspectRatio: 1.75,
@@ -158,6 +159,7 @@ class _ProductListState extends State<ProductList> {
                          
                          else{
                           return ListView.builder  (
+                            key: const Key('products'),
                     itemCount: products.length,
                     itemBuilder: (context,index){
                          
